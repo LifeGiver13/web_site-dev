@@ -1,0 +1,94 @@
+/* Global Styles (Strength: 1) */
+
+p {
+    color: whitesmoke;
+}
+
+/* Class Styles (Strength: 10) */
+
+.alert {
+    color: red !important;
+    font-size: 1.5em;
+}
+
+.catchy {
+    color: purple;
+}
+
+/* ID Styles (Strength: 100) */
+
+#actions_title {
+    font-size: 3em;
+    color: aqua;
+}
+
+/* An inline style is the most specific rule you can apply. */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    background-color: aquamarine;
+    padding: 0.5em;
+}
+
+#header {
+    background-color: lightgray;
+    height: 10vh;
+    text-align: center;
+}
+
+#main {
+    background-color: bisque;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#content {
+    flex-grow: 2;
+    background-color: brown;
+    text-wrap-mode: wrap;
+    overflow-y: auto;
+}
+
+#actions {
+    flex-grow: 2;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+}
+
+#footer {
+    background-color: purple;
+    min-height: 10vh;
+}
+
+#login-form {
+    background-color: lime;
+    align-items: stretch;
+}
+
+#register-form {
+    background-color: red;
+}
+
+h2,
+h1 {
+    text-align: center;
+    color: red;
+}
+
+footer {
+    clear: both;
+    text-align: center;
+}
+
+marquee {
+    color: whitesmoke;
+}
