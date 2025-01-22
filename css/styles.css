@@ -1,7 +1,7 @@
 /* Global Styles (Strength: 1) */
 
 p {
-    color: whitesmoke;
+    color: black;
 }
 
 /* Class Styles (Strength: 10) */
@@ -56,7 +56,7 @@ p {
 
 #actions {
     flex-grow: 2;
-    background-color: gray;
+    background-color: lime;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -65,7 +65,7 @@ p {
 }
 
 #footer {
-    background-color: purple;
+    background-color: lightgrey;
     min-height: 10vh;
 }
 
@@ -75,7 +75,7 @@ p {
 }
 
 #register-form {
-    background-color: red;
+    background-color: lime;
 }
 
 h2,
@@ -90,5 +90,9 @@ footer {
 }
 
 marquee {
-    color: whitesmoke;
+    color: red;
+}
+
+.rotate:hover {
+    transform: scale(2.0, 2.0)
 }
