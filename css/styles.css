@@ -2,6 +2,7 @@
 
 p {
     color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Class Styles (Strength: 10) */
@@ -27,6 +28,7 @@ p {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 #wrapper {
@@ -49,9 +51,9 @@ p {
 
 #content {
     flex-grow: 2;
-    background-color: brown;
-    text-wrap-mode: wrap;
-    overflow-y: auto;
+    background-color: lime;
+    flex-wrap: wrap;
+
 }
 
 #actions {
@@ -71,7 +73,7 @@ p {
 
 #login-form {
     background-color: lime;
-    align-items: stretch;
+
 }
 
 #register-form {
@@ -79,9 +81,11 @@ p {
 }
 
 h2,
-h1 {
+h1,
+h3 {
     text-align: center;
     color: red;
+    text-shadow: black 7px 7px 6px;
 }
 
 footer {
@@ -94,5 +98,28 @@ marquee {
 }
 
 .rotate:hover {
-    transform: scale(2.0, 2.0)
+    transform: scale(1.7, 1.7)
+}
+
+.navigationbar {
+    display: flex;
+    direction: inherit;
+    flex-wrap: wrap;
+    border: 2px dashed lightgray;
+    text-align: center;
+}
+
+
+.navigationbar>div {
+    padding: 9px 107.4px;
+    background: red;
+    border: 2px solid red;
+    font: 0.85em sans-serif;
+
+}
+
+audio {
+    border: 2px whitesmoke;
+
+
 }
