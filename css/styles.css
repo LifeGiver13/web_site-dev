@@ -53,6 +53,9 @@ p {
     flex-grow: 2;
     background-color: lime;
     flex-wrap: wrap;
+    border-style: ridge double;
+    border-color: greenyellow;
+    border-width: 1em;
 
 }
 
@@ -73,11 +76,17 @@ p {
 
 #login-form {
     background-color: lime;
+    border: 2px;
+    border-style: dashed;
+    border-color: red;
 
 }
 
 #register-form {
     background-color: lime;
+    border: 2px;
+    border-style: dashed;
+    border-color: red;
 }
 
 h2,
@@ -122,4 +131,8 @@ audio {
     border: 2px whitesmoke;
 
 
+}
+
+a {
+    color: lime;
 }
