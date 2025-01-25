@@ -2,13 +2,14 @@
 
 p {
     color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3em;
 }
 
 /* Class Styles (Strength: 10) */
 
 .alert {
-    color: red !important;
+    color: #00FA9A !important;
     font-size: 1.5em;
 }
 
@@ -37,13 +38,13 @@ p {
 }
 
 #header {
-    background-color: lightgray;
+    background-color: #191970;
     height: 10vh;
     text-align: center;
 }
 
 #main {
-    background-color: bisque;
+    background-color: #191970;
     min-height: 80vh;
     display: flex;
     flex-direction: row;
@@ -51,50 +52,54 @@ p {
 
 #content {
     flex-grow: 2;
-    background-color: lime;
+    background-color: #D8BFD8;
     flex-wrap: wrap;
     border-style: ridge double;
-    border-color: greenyellow;
+    border-color: #191970;
     border-width: 1em;
 
 }
 
 #actions {
     flex-grow: 2;
-    background-color: lime;
+    background-color: #D8BFD8;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
+    border-style: ridge double;
+    border-color: #191970;
+    border-width: 1em;
 
 }
 
+
 #footer {
-    background-color: lightgrey;
+    background-color: #191970;
     min-height: 10vh;
 }
 
 #login-form {
-    background-color: lime;
+    background-color: #D8BFD8;
     border: 2px;
     border-style: dashed;
-    border-color: red;
+    border-color: #191970;
 
 }
 
 #register-form {
-    background-color: lime;
+    background-color: #D8BFD8;
     border: 2px;
     border-style: dashed;
-    border-color: red;
+    border-color: #191970;
 }
 
 h2,
 h1,
 h3 {
     text-align: center;
-    color: red;
+    color: #00FA9A;
     text-shadow: black 7px 7px 6px;
+    font: 2em sans-serif;
 }
 
 footer {
@@ -103,7 +108,7 @@ footer {
 }
 
 marquee {
-    color: red;
+    color: #00FA9A;
 }
 
 .rotate:hover {
@@ -114,15 +119,15 @@ marquee {
     display: flex;
     direction: inherit;
     flex-wrap: wrap;
-    border: 2px dashed lightgray;
+    border: 2px dashed #191970;
     text-align: center;
 }
 
 
 .navigationbar>div {
     padding: 9px 107.4px;
-    background: red;
-    border: 2px solid red;
+    background: #191970;
+    border: 2px solid#191970;
     font: 0.85em sans-serif;
 
 }
@@ -134,5 +139,15 @@ audio {
 }
 
 a {
-    color: lime;
+    color: #00FA9A;
+}
+
+table {
+    border: 4px solid #191970;
+}
+
+td,
+th {
+    border: 1px solid #191970;
+    font-size: 1.2em;
 }
