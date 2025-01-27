@@ -65,7 +65,7 @@ p {
     background-color: #D8BFD8;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border-style: ridge double;
     border-color: #191970;
     border-width: 1em;
@@ -98,7 +98,7 @@ h1,
 h3 {
     text-align: center;
     color: #00FA9A;
-    text-shadow: black 7px 7px 6px;
+
     font: 2em sans-serif;
 }
 
@@ -117,10 +117,11 @@ marquee {
 
 .navigationbar {
     display: flex;
-    direction: inherit;
+    direction: initial;
     flex-wrap: wrap;
     border: 2px dashed #191970;
     text-align: center;
+
 }
 
 
@@ -150,4 +151,88 @@ td,
 th {
     border: 1px solid #191970;
     font-size: 1.2em;
+}
+
+/* @media screen and (max-width: 600px) {
+    p img {
+        width: 100%;
+    }
+
+    div>a {
+        text-align: left;
+    }
+
+
+
+    ul li {
+        display: block;
+        margin: 10px;
+    }
+
+    nav {
+        justify-content: left;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+    body {
+        background-color: skyblue;
+    }
+
+    p img {
+        width: 100%;
+    }
+} */
+@media screen and (max-width: 600px) {
+    .navigationbar>a {
+        text-align: center;
+    }
+
+
+
+    #actions {
+        flex-grow: 1;
+
+    }
+
+    #content {
+        flex-grow: 1;
+
+    }
+
+    #main {
+
+        flex-direction: column-reverse;
+
+    }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+    .navigationbar {
+        text-align: left;
+        flex-direction: column;
+        display: block;
+    }
+
+
+
+    #actions {
+        flex-grow: 1;
+    }
+
+    p img {
+        width: 100%;
+    }
+
+    #content {
+        flex-grow: 1;
+
+    }
+
+    #main {
+
+        flex-direction: column-reverse;
+
+    }
 }
