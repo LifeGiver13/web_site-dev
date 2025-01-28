@@ -14,7 +14,7 @@ p {
 }
 
 .catchy {
-    color: purple;
+    color: #00FA9A;
 }
 
 /* ID Styles (Strength: 100) */
@@ -219,11 +219,10 @@ th {
 
     #actions {
         flex-grow: 1;
+
     }
 
-    p img {
-        width: 100%;
-    }
+    #login-form {}
 
     #content {
         flex-grow: 1;
