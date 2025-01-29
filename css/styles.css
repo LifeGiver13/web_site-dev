@@ -14,10 +14,15 @@ p {
 }
 
 .catchy {
-    color: #00FA9A;
+    color: #191970;
 }
 
 /* ID Styles (Strength: 100) */
+#chap {
+    padding: 60px;
+    margin: 20px;
+    border: 2px solid #191970;
+}
 
 #actions_title {
     font-size: 3em;
@@ -35,6 +40,7 @@ p {
 #wrapper {
     background-color: aquamarine;
     padding: 0.5em;
+
 }
 
 #header {
@@ -183,6 +189,7 @@ th {
         width: 100%;
     }
 } */
+
 @media screen and (max-width: 600px) {
     .navigationbar>a {
         text-align: center;
