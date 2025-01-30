@@ -3,7 +3,7 @@
 p {
     color: black;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.3em;
+    font-size: 1.7em
 }
 
 /* Class Styles (Strength: 10) */
@@ -22,11 +22,17 @@ p {
     padding: 60px;
     margin: 20px;
     border: 2px solid #191970;
+    background-color: turquoise;
 }
+
+table {
+    background-color: turquoise;
+}
+
 
 #actions_title {
     font-size: 3em;
-    color: aqua;
+    color: gold;
 }
 
 /* An inline style is the most specific rule you can apply. */
@@ -38,74 +44,88 @@ p {
 }
 
 #wrapper {
-    background-color: aquamarine;
+    background-color: gold;
     padding: 0.5em;
 
 }
 
 #header {
-    background-color: #191970;
+    background-color: blue;
     height: 10vh;
     text-align: center;
 }
 
 #main {
-    background-color: #191970;
+    background-color: classic blue;
     min-height: 80vh;
     display: flex;
     flex-direction: row;
+    margin: 2px;
 }
 
 #content {
     flex-grow: 2;
-    background-color: #D8BFD8;
+    background-color: blue;
     flex-wrap: wrap;
-    border-style: ridge double;
-    border-color: #191970;
-    border-width: 1em;
+
 
 }
 
 #actions {
     flex-grow: 2;
-    background-color: #D8BFD8;
+    background-color: blue;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-style: ridge double;
-    border-color: #191970;
-    border-width: 1em;
 
 }
 
 
 #footer {
-    background-color: #191970;
+    background-color: blue;
     min-height: 10vh;
 }
 
 #login-form {
-    background-color: #D8BFD8;
-    border: 2px;
+    background-color: blue;
     border-style: dashed;
-    border-color: #191970;
+    border: 2px solid gold;
+
 
 }
 
 #register-form {
-    background-color: #D8BFD8;
-    border: 2px;
+    background-color: blue;
     border-style: dashed;
-    border-color: #191970;
+    border: 2px solid gold;
 }
+
+/* 
+.outer,
+.inner {
+    width: 20vw;
+    height: 60vh;
+}
+
+.outer {
+    display: inline-block;
+    border: 5px solid turquoise;
+    background: inherit;
+}
+
+.all {
+    border-radius: 40px;
+} */
+
+
 
 h2,
 h1,
 h3 {
     text-align: center;
-    color: #00FA9A;
+    color: turquoise;
 
-    font: 2em sans-serif;
+    font: 3em sans-serif;
 }
 
 footer {
@@ -114,27 +134,23 @@ footer {
 }
 
 marquee {
-    color: #00FA9A;
+    color: turquoise;
 }
 
-.rotate:hover {
-    transform: scale(1.7, 1.7)
-}
+
 
 .navigationbar {
     display: flex;
     direction: initial;
     flex-wrap: wrap;
-    border: 2px dashed #191970;
     text-align: center;
 
 }
 
 
 .navigationbar>div {
-    padding: 9px 107.4px;
-    background: #191970;
-    border: 2px solid#191970;
+    padding: 0px 107.4px;
+    background: blue;
     font: 0.85em sans-serif;
 
 }
@@ -146,49 +162,47 @@ audio {
 }
 
 a {
-    color: #00FA9A;
+    color: gold;
 }
 
 table {
-    border: 4px solid #191970;
+    border: 4px solid black;
 }
 
 td,
 th {
-    border: 1px solid #191970;
-    font-size: 1.2em;
+    border: 1px solid black;
+    font-size: 1.6em;
 }
 
-/* @media screen and (max-width: 600px) {
-    p img {
-        width: 100%;
-    }
-
-    div>a {
-        text-align: left;
-    }
-
-
-
-    ul li {
-        display: block;
-        margin: 10px;
-    }
-
-    nav {
-        justify-content: left;
-    }
+td p {
+    font-size: 0.96em !important;
 }
 
-@media screen and (min-width: 600px) and (max-width: 992px) {
-    body {
-        background-color: skyblue;
-    }
+td img {
+    width: 100%;
+    height: auto;
+}
 
-    p img {
-        width: 100%;
-    }
-} */
+#flex-img {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#login-form img {
+    width: 70%;
+    height: auto;
+}
+
+#flex-img {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
 
 @media screen and (max-width: 600px) {
     .navigationbar>a {
@@ -207,11 +221,35 @@ th {
 
     }
 
+    #login-form img {
+        width: 100%;
+        height: auto;
+    }
+
+    #register-form img {
+        width: 100%;
+        height: auto;
+    }
+
+    table td img {
+        width: 100%;
+        height: auto;
+    }
+
+    td {
+        font-size: 1.2em;
+    }
+
+    td p {
+        font-size: 0.89m;
+    }
+
     #main {
 
         flex-direction: column-reverse;
 
     }
+
 
 }
 
@@ -229,11 +267,41 @@ th {
 
     }
 
-    #login-form {}
+    #login-form img {
+        width: auto;
+        height: 25%;
+    }
+
+    #register-form img {
+        width: 25%;
+        height: auto;
+    }
 
     #content {
         flex-grow: 1;
 
+    }
+
+    td {
+        font-size: 2em;
+    }
+
+    td p {
+        font-size: 1.2em;
+    }
+
+    table td img {
+        width: 100%;
+        height: auto;
+    }
+
+    nav a {
+        font-size: 2em;
+        display: block;
+    }
+
+    nav {
+        height: 50vh;
     }
 
     #main {
