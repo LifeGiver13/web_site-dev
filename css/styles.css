@@ -9,12 +9,23 @@ p {
 /* Class Styles (Strength: 10) */
 
 .alert {
-    color: #00FA9A !important;
-    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif !important;
+    font-style: italic;
 }
 
 .catchy {
-    color: #191970;
+    color: blue;
+    font-family: "Castellar", fantasy;
+
+}
+
+input {
+    width: 10vw;
+    height: 2vh;
+}
+
+#cent {
+    margin: 15px 1in;
 }
 
 /* ID Styles (Strength: 100) */
@@ -29,9 +40,16 @@ table {
     background-color: turquoise;
 }
 
+form p {
+    color: gold;
+}
 
 #actions_title {
     font-size: 3em;
+    color: gold;
+}
+
+aside>p {
     color: gold;
 }
 
@@ -72,14 +90,12 @@ table {
 }
 
 #actions {
-    flex-grow: 2;
-    background-color: blue;
+    flex-grow: 1;
+    background-color: gold;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
-
 
 #footer {
     background-color: blue;
@@ -88,16 +104,13 @@ table {
 
 #login-form {
     background-color: blue;
-    border-style: dashed;
-    border: 2px solid gold;
-
+    flex-grow: initial;
 
 }
 
 #register-form {
     background-color: blue;
-    border-style: dashed;
-    border: 2px solid gold;
+    flex-grow: 1;
 }
 
 /* 
@@ -137,7 +150,9 @@ marquee {
     color: turquoise;
 }
 
-
+fieldset img {
+    float: right;
+}
 
 .navigationbar {
     display: flex;
@@ -166,7 +181,8 @@ a {
 }
 
 table {
-    border: 4px solid black;
+    border: 4px solid blue;
+    padding: 2px;
 }
 
 td,
@@ -177,6 +193,7 @@ th {
 
 td p {
     font-size: 0.96em !important;
+    padding: 22px;
 }
 
 td img {
@@ -191,16 +208,15 @@ td img {
 
 }
 
+
 #login-form img {
-    width: 70%;
+    width: 100%;
     height: auto;
 }
 
-#flex-img {
-    display: flex;
-    flex-direction: column;
-
-
+#register-form img {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -229,6 +245,15 @@ td img {
     #register-form img {
         width: 100%;
         height: auto;
+    }
+
+    input {
+        width: 20vw;
+        height: 20vh;
+    }
+
+    #cent {
+        margin: 15px 1in;
     }
 
     table td img {
@@ -260,7 +285,15 @@ td img {
         display: block;
     }
 
+    input {
+        width: 15vw;
+        height: 2vh;
+        margin: 15px 1in;
+    }
 
+    #cent {
+        margin: 15px 1in;
+    }
 
     #actions {
         flex-grow: 1;
