@@ -68,7 +68,7 @@ aside>p {
 
 #header {
     background-color: blue;
-    height: 10vh;
+    height: 20vh;
     text-align: center;
 }
 
@@ -87,6 +87,7 @@ aside>p {
 
 
 }
+
 
 #actions {
     flex-grow: 1;
@@ -252,7 +253,7 @@ td img {
     }
 
     td>p {
-        font-size: 0.89m;
+        font-size: 0.89em;
     }
 
     #main {
@@ -261,6 +262,7 @@ td img {
 
     }
 
+
     .navigationbar>div {
         padding: 0px 107.4px;
         background: blue;
@@ -268,6 +270,12 @@ td img {
 
     }
 
+    header h1 img {
+        height: auto;
+        width: 6%;
+        margin: 6px;
+
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 992px) {
@@ -361,5 +369,4 @@ td img {
     h3 {
         font-size: 6em;
     }
-
 }
