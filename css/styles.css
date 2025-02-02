@@ -144,6 +144,7 @@ fieldset img {
     direction: initial;
     flex-wrap: wrap;
     text-align: center;
+
 }
 
 
@@ -202,6 +203,10 @@ td img {
     height: 100%;
 }
 
+.logo {
+    height: auto;
+    width: 7%;
+}
 
 @media screen and (max-width: 600px) {
     .navigationbar>a {
@@ -259,9 +264,15 @@ td img {
     #main {
 
         flex-direction: column-reverse;
-
     }
 
+    /* 
+    }
+
+    .navigationbar div img {
+        width: 0.25%;
+        height: auto;
+    } */
 
     .navigationbar>div {
         padding: 0px 107.4px;
@@ -270,12 +281,7 @@ td img {
 
     }
 
-    header h1 img {
-        height: auto;
-        width: 6%;
-        margin: 6px;
 
-    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 992px) {
@@ -283,6 +289,11 @@ td img {
         text-align: left;
         flex-direction: column;
         display: block;
+    }
+
+    .navigationbar div img {
+        width: 0.25%;
+        height: auto;
     }
 
     input {
