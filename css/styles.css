@@ -8,7 +8,12 @@ p {
 
 /* Class Styles (Strength: 10) */
 
+h1>img {
+    width: 7% !important;
+    height: auto !important;
+    margin: 0px !important;
 
+}
 
 .catchy {
     color: blue;
@@ -203,10 +208,7 @@ td img {
     height: 100%;
 }
 
-.logo {
-    height: auto;
-    width: 7%;
-}
+
 
 @media screen and (max-width: 600px) {
     .navigationbar>a {
