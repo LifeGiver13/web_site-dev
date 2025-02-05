@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="This is a business directory" />
+    <meta name="keywords" content="Anime Story, Fotsing Life, directory" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Welcome to My Website</title>
+    <link href="static/css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <h1 class="rotate"><img src="static/images/AnimeN_Logo.png" alt="logo"> Anime Novels </h1>
+            <nav>
+                <div class="navigationbar">
+                    <div><a href="landing_page.html">Home</a></div>
+                    <div><a href="">About us</a></div>
+                    <div><a href="listing.html">Discovery</a></div>
+                    <div><a href="popular.html">Popular</a></div>
+                    <div><a href="">Report Problems</a></div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main">
+            <aside id="content">
+                <h1>Discovery</h1>
+                <p>Discover Anime Stories people come up with, all over the world and let them know how good it is to
+                    encourage them to continue writing.</p>
+
+                <div class="flex-cont">
+                    {% for anime in anime_list %}
+                    <div id="myDIV">
+                        <img src="{{ anime.image_url }}" alt="{{ anime.name }}">
+                        <p class="catchy">Name: {{ anime.name }}</p>
+                        <p class="catchy">Novel Type: {{ anime.novel_type }}</p>
+                        <p class="catchy">Theme: {{ anime.theme }}</p>
+                        <p><a href="{{ anime.link }}">Read Now!</a></p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </aside>
+        </main>
+        <footer id="footer">
+            <marquee>Register or Login for the next chapter and more of anime stories</marquee>
+            &COPY;Fotsing Life
+        </footer>
+    </div>
+    <style>
+        #myDIV {
+            width: 27vw;
+            height: auto;
+            background-color: salmon;
+            color: white;
+            margin: 13px;
+            padding: 5px;
+
+
+        }
+
+        h1>img {
+            width: 7% !important;
+            height: auto !important;
+            margin: 0px !important;
+
+        }
+
+
+        .flex-cont {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px;
+            flex-direction: row;
+            justify-content: left;
+        }
+
+
+        .flex-cont>div {
+            padding: 2px 5px;
+            background-color: turquoise !important;
+            border: 2px solid black;
+            font: 1.25;
+        }
+
+        .logo>img {
+            height: auto;
+            width: 7%;
+            border: 5px solid turquoise;
+            margin: 0px;
+        }
+
+        img {
+            border: 2px solid blue;
+            margin: 70px;
+            width: 50%;
+            height: auto;
+            margin: 25%;
+        }
+    </style>
+</body>
+
+</html>
