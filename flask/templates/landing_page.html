@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="veiwport" content="width=device-width, intial-scale =1, minimum-scale=1">
-    <meta name="description" content="This is a business directory" />
-    <meta name="keywords" content="Anime Story , Fotsing Life , directory" />
-    <meta name="veiwport" content="width=device-width, intial-scale =1, minimum-scale=1">
-    <title>{{page_title}}</title>
-    <link href="static/css/styles.css" rel="stylesheet" type="text/css" />
-</head>
+{%extends "default_page.html" %}
+{%block content%}
 
 <body>
     <div id="wrapper" id="grid-container">
@@ -177,7 +167,7 @@
                 </table>
                 </p>
                 <audio controls>
-                    <source src="static/anime songs/ONE PIECE - Opening 26 (Egghead) (48k).mp3" type="audio/mpeg">
+                    <source src="anime songs/ONE PIECE - Opening 26 (Egghead) (48k).mp3" type="audio/mpeg">
                 </audio>
                 <h3>Join Us</h3>
                 <p>Dive into a world of imagination, creativity, and endless possibilities. Whether you're here to
@@ -195,22 +185,22 @@
                             <h2>Login
                             </h2>
                         </legend>
-                        <form method="post">
+                        <form method="post" action="/intro">
 
-                            <p><label id="userName">User Name:</label>
-                                <input id="userName" ,type="text" , placeholder="Enter your first name" required>
+                            <p><label name="userName">User Name:</label>
+                                <input name="userName" ,type="text" , placeholder="Enter your first name" required>
                             </p>
 
-                            <p><label id="emailA">Email Address:</label>
-                                <input id="emailA" , type="email" , placeholder="example goggime@gmail.com" required>
+                            <p><label name="emailA">Email Address:</label>
+                                <input name="emailA" , type="email" , placeholder="example goggime@gmail.com" required>
                             </p>
 
 
-                            <p><label id="password">Password:</label>
-                                <input id="password" , type="password" , placeholder="Enter a password" required>
+                            <p><label name="password">Password:</label>
+                                <input name="password" , type="password" , placeholder="Enter a password" required>
 
                             </p>
-                            <p id="cent"><input id="enter" , type="submit" , value="Login">
+                            <p id="cent"><input name="enter" , type="submit" , value="Login">
                             </p>
 
                     </fieldset>
@@ -224,27 +214,27 @@
                             <h2>Register</h2>
                         </legend>
 
-                        <form method="post">
-                            <p><label id="1stname">Name:</label>
-                                <input id="1stname" ,type="text" , placeholder="Enter your first name" required>
+                        <form method="post" action="/intro">
+                            <p><label name="userName">Name:</label>
+                                <input name="userName" ,type="text" , placeholder="Enter your first name" required>
                             </p>
 
-                            <p><label id="surname">Surname:</label>
-                                <input id="surname" , type="text" , placeholder="Enter your Surname" required>
+                            <p><label name="surname">Surname:</label>
+                                <input name="surname" , type="text" , placeholder="Enter your Last name" required>
                             </p>
 
-                            <p><label id="emailA">Email Address:</label>
-                                <input id="emailA" , type="email" , placeholder="example goggime@gmail.com" required>
-                            </p>
-
-
-                            <p> <label id="Telephone">Telephone Number:</label>
-                                <input id="Telephone" , type="tel" , placeholder="Enter a valid phone number">
+                            <p><label name="emailA">Email Address:</label>
+                                <input name="emailA" , type="email" , placeholder="example goggime@gmail.com" required>
                             </p>
 
 
-                            <p> <label id="password">Password:</label>
-                                <input id="password" ,type="password" , placeholder="Enter a password" required>
+                            <p> <label name="Telephone">Telephone Number:</label>
+                                <input name="Telephone" , type="tel" , placeholder="Enter a valid phone number">
+                            </p>
+
+
+                            <p> <label name="password">Password:</label>
+                                <input name="password" ,type="password" , placeholder="Enter a password" required>
                             </p>
                             <p class="btn"><input id="save" , type="submit" , value="Register">
                             </p>
@@ -261,5 +251,6 @@
         </footer>
     </div>
 </body>
+{%endblock%}
 
 </html>

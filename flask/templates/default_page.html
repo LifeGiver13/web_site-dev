@@ -2,14 +2,18 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="veiwport" content="width=device-width,intial-scale1.0">
-    <title>{{page_title}}</title>
+    <meta charset="UTF-8" />
+    <meta name="veiwport" content="width=device-width, intial-scale =1, minimum-scale=1">
+    <meta name="description" content="This is a business directory" />
+    <meta name="keywords" content="Anime Story , Fotsing Life , directory" />
+    <meta name="veiwport" content="width=device-width, intial-scale =1, minimum-scale=1">
+    <title>{%block title%}{{page_title}}{%endblock%}</title>
+    <link href="static/css/styles.css" rel="stylesheet" type="text/css" />
 </head>
+{%block content%}
 
 <body>
-    <h1>{{page_header}}</h1>
-    <p>{{page_content}}</p>
 </body>
+{%endblock%}
 
 </html>
