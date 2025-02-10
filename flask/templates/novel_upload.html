@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+{%extends "default_page.html" %}
+{%block content%}
+
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <h1 class="rotate"><img src="static/images/AnimeN_Logo.png" alt="logo"> Anime Novels </h1>
+            <nav>
+                <div class="navigationbar">
+                    <div><a href="landing_page.html">Home</a></div>
+                    <div><a href="">About us</a></div>
+                    <div><a href="listing.html">Discovery</a></div>
+                    <div><a href="popular.html">Popular</a></div>
+                    <div><a href="">Report Problems</a></div>
+                </div>
+            </nav>
+        </header>
+
+        <main id="main">
+            <aside id="content">
+                <h1>Anime Upload File</h1>
+                <form method="post" action="" enctype="multipart/form-data">
+                    <p>
+                        <label for="novelName">Novel Name:</label>
+                        <input name="novelName" type="text" class="rounded-input"
+                            placeholder="Please enter an Anime Novel Name." required />
+                    </p>
+                    <p>
+                        <label for="novelType">Novel Type:</label>
+                        <input name="novelType" type="text" class="rounded-input"
+                            placeholder="Please enter the novel type" required />
+                    </p>
+                    <p>
+                        <label for="theme">Theme:</label>
+                        <input name="theme" type="text" class="rounded-input" placeholder="Please enter the themes."
+                            required />
+                    </p>
+                    <p>
+                        <label for="author">Author:</label>
+                        <input name="author" type="password" class="rounded-input" placeholder="Enter the authors name"
+                            required />
+                    </p>
+                    <p>
+                        <label for="book_cover">Book Cover: </label>
+                        <input name="book_cover" type="file" class="rounded-button" />
+                    </p>
+                    <p>
+                        <input type="submit" value="Submit" class="rounded-button" />
+                    </p>
+                </form>
+
+            </aside>
+        </main>
+        <footer id="footer">
+            <marquee>Register or Login for the next chapter and more of anime stories</marquee>
+            &COPY;Fotsing Life
+        </footer>
+    </div>
+    <style>
+        #myDIV {
+            width: 27vw;
+            height: auto;
+            background-color: salmon;
+            color: white;
+            margin: 13px;
+            padding: 5px;
+
+
+        }
+
+        h1>img {
+            width: 7% !important;
+            height: auto !important;
+            margin: 0px !important;
+
+        }
+
+
+        .flex-cont {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px;
+            flex-direction: row;
+            justify-content: left;
+        }
+
+
+        .flex-cont>div {
+            padding: 2px 5px;
+            background-color: turquoise !important;
+            border: 2px solid black;
+            font: 1.25;
+        }
+
+        .logo>img {
+            height: auto;
+            width: 7%;
+            border: 5px solid turquoise;
+            margin: 0px;
+        }
+
+        img {
+            border: 2px solid blue;
+            margin: 70px;
+            width: 50%;
+            height: auto;
+            margin: 25%;
+        }
+    </style>
+</body>
+{%endblock%}

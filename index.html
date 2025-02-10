@@ -195,22 +195,25 @@
                             <h2>Login
                             </h2>
                         </legend>
-                        <form method="post">
+                        <form method="post" action="/intro">
 
-                            <p><label id="userName">User Name:</label>
-                                <input id="userName" ,type="text" , placeholder="Enter your first name" required>
+                            <p><label name="userName">User Name:</label>
+                                <input class="rounded-input" , name="userName" ,type="text" ,
+                                    placeholder="Enter your first name" required>
+                            </p>`11
+
+                            <p><label name="emailA">Email Address:</label>
+                                <input class="rounded-input" , name="emailA" , type="email" ,
+                                    placeholder="example goggime@gmail.com" required>
                             </p>
 
-                            <p><label id="emailA">Email Address:</label>
-                                <input id="emailA" , type="email" , placeholder="example goggime@gmail.com" required>
-                            </p>
 
-
-                            <p><label id="password">Password:</label>
-                                <input id="password" , type="password" , placeholder="Enter a password" required>
+                            <p><label name="password">Password:</label>
+                                <input class="rounded-input" , name="password" , type="password" ,
+                                    placeholder="Enter a password" required>
 
                             </p>
-                            <p id="cent"><input id="enter" , type="submit" , value="Login">
+                            <p id="cent"><input class="rounded-button" , name="enter" , type="submit" , value="Login">
                             </p>
 
                     </fieldset>
@@ -224,29 +227,35 @@
                             <h2>Register</h2>
                         </legend>
 
-                        <form method="post">
-                            <p><label id="1stname">Name:</label>
-                                <input id="1stname" ,type="text" , placeholder="Enter your first name" required>
+                        <form method="post" action="/intro">
+                            <p><label name="userName">Name:</label>
+                                <input class="rounded-input" , name="userName" ,type="text" ,
+                                    placeholder="Enter your first name" required>
                             </p>
 
-                            <p><label id="surname">Surname:</label>
-                                <input id="surname" , type="text" , placeholder="Enter your Surname" required>
+                            <p><label name="surname">Last Name:</label>
+                                <input class="rounded-input" , name="surname" , type="text" ,
+                                    placeholder="Enter your Last name" required>
                             </p>
 
-                            <p><label id="emailA">Email Address:</label>
-                                <input id="emailA" , type="email" , placeholder="example goggime@gmail.com" required>
-                            </p>
-
-
-                            <p> <label id="Telephone">Telephone Number:</label>
-                                <input id="Telephone" , type="tel" , placeholder="Enter a valid phone number">
+                            <p><label name="emailA">Email Address:</label>
+                                <input class="rounded-input" name="emailA" , type="email" ,
+                                    placeholder="example goggime@gmail.com" required>
                             </p>
 
 
-                            <p> <label id="password">Password:</label>
-                                <input id="password" ,type="password" , placeholder="Enter a password" required>
+                            <p> <label name="Telephone">Telephone Number:</label>
+                                <input class="rounded-input" ,name="Telephone" , type="tel" ,
+                                    placeholder="Enter a valid phone number">
                             </p>
-                            <p class="btn"><input id="save" , type="submit" , value="Register">
+
+
+                            <p> <label name="password">Password:</label>
+                                <input class="rounded-input" , name="password" ,type="password" ,
+                                    placeholder="Enter a password" required>
+                            </p>
+                            <p class="btn"><input id="cent" class="rounded-button" , name="save" , type="submit" ,
+                                    value="Register">
                             </p>
 
                     </fieldset>

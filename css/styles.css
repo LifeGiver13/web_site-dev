@@ -9,34 +9,10 @@ p {
 /* Class Styles (Strength: 10) */
 
 h1>img {
-    width: 10% !important;
+    width: 7% !important;
     height: auto !important;
     margin: 0px !important;
-    display: inline;
 
-}
-
-.rounded-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    /* Makes the input edges rounded */
-    outline: none;
-}
-
-.rounded-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    /* Rounded button */
-    cursor: pointer;
-}
-
-.rounded-button:hover {
-    background-color: #0056b3;
 }
 
 .catchy {
@@ -45,11 +21,8 @@ h1>img {
 
 }
 
-input {
-    width: 10vw;
-    height: 5vh;
-    margin: 3px;
-}
+
+
 
 #cent {
     margin: 15px 1in;
@@ -68,16 +41,16 @@ table {
 }
 
 form p {
-    color: gold;
+    color: whitesmoke;
 }
 
 #actions_title {
     font-size: 3em;
-    color: gold;
+    color: whitesmoke;
 }
 
 aside>p {
-    color: gold;
+    color: whitesmoke;
     font-size: 2em;
 }
 
@@ -90,7 +63,7 @@ aside>p {
 }
 
 #wrapper {
-    background-color: gold;
+    background-color: whitesmoke;
     padding: 0.5em;
 
 }
@@ -120,7 +93,7 @@ aside>p {
 
 #actions {
     flex-grow: 1;
-    background-color: gold;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -142,6 +115,28 @@ aside>p {
     flex-grow: 1;
 }
 
+.rounded-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    /* Makes the input edges rounded */
+    outline: none;
+}
+
+.rounded-button {
+    padding: 10px 20px;
+    background-color: turquoise;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    /* Rounded button */
+    cursor: pointer;
+}
+
+.rounded-button:hover {
+    background-color: #0056b3;
+}
 
 
 h2,
@@ -190,7 +185,7 @@ audio {
 }
 
 a {
-    color: gold;
+    color: whitesmoke;
 }
 
 table {
@@ -225,6 +220,8 @@ td img {
 #login-form img {
     width: 100%;
     height: auto;
+    float: left;
+    display: block;
 }
 
 #register-form img {
@@ -261,10 +258,6 @@ td img {
         height: auto;
     }
 
-    input {
-        width: 20vw;
-        height: 20vh;
-    }
 
     #cent {
         margin: 15px 1in;
@@ -322,15 +315,15 @@ td img {
         height: auto;
     }
 
-    input {
-        width: 20vw;
-        height: 2vh;
-        margin: 15px 1in;
+    .rounded-input {
+        width: 50%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        /* Makes the input edges rounded */
+        outline: none;
     }
 
-    input type {
-        font-size: 4em;
-    }
 
     #cent {
         margin: 15px 1in;
