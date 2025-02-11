@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import os
+import json
 app = Flask(__name__)
 
 
@@ -54,24 +55,6 @@ def TBE():
     return render_template("TBE.html", page_title="The Bone Exorsist")
 
 
-# @app.route('/listing.html')
-# def listing_page():
-#     anime_list = [
-#         {"name": "The Moon Of Dominion",
-#          "novel_type": " Shonen",
-#          "theme": "Freindship, Adventure, Supernatural, and Betrayal",
-#          "image_url": "data:image/jpeg;base64,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",
-#          "link": ""
-#          },
-#         {"name": "The Bone Exorcist",
-#          "novel_type": "Shonen",
-#          "Theme": "Super-natural, Mystry, Drama, Funny and Revenge.",
-#          "img_url": "static/images/bone_exors.webp",
-#          "link": "templates/TBE.html"},
-#     ]
-#     return render_template("listing.html", anime_list=anime_list)
-
-
 # @app.route('/popular_novels.html')
 # def popular_novels():
 #     anime_list = [
@@ -90,20 +73,85 @@ def TBE():
 #     return render_template("popular_novels.html", anime_list=anime_list)
 
 
+# @app.route("/novel_upload", methods=["POST", "GET"])
+# def uploading_info():
+#     if request.method == "POST":
+#         print(request.form)
+#         print(request.files)
+
+#         # Assidn the upload file to a variable
+#         Book_cover = request.files["book_cover"]
+#         # save the file on the file system (in our uploads folder)
+#         Book_cover.save(
+#             os.path.join(app.config["UPLOAD_FOLDER"], Book_cover.filename)
+#         )
+#     # Pass the file name into tha template to display to the user
+#     return render_template("novel_upload.html")
+
+
 @app.route("/novel_upload", methods=["POST", "GET"])
 def uploading_info():
     if request.method == "POST":
-        print(request.form)
-        print(request.files)
+        novel_name = request.form.get("novelName")
+        novel_type = request.form.get("novelType")
+        theme = request.form.get("theme")
+        author = request.form.get("author")
+        book_cover = request.files("book_cover")
+        # Save the uploaded book cover
+        if book_cover:
+            cover_path = os.path.join(
+                app.config["UPLOAD_FOLDER"], book_cover.filename)
+            book_cover.save(cover_path)
+        else:
+            cover_path = None
 
-        # Assidn the upload file to a variable
-        Book_cover = request.files["book_cover"]
-        # save the file on the file system (in our uploads folder)
-        Book_cover.save(
-            os.path.join(app.config["UPLOAD_FOLDER"], Book_cover.filename)
-        )
-    # Pass the file name into tha template to display to the user
+        # Store the novel details in a dictionary
+        novel_data = {
+            "Novel Name": novel_name,
+            "Novel Type": novel_type,
+            "Theme": theme,
+            "Author": author,
+            "Book Cover": cover_path
+        }
+
+        # Save the form data to a JSON file
+        json_file = "novels.json"
+
+        # Check if the file exists and load existing data
+        if os.path.exists(json_file):
+            with open(json_file, "r") as file:
+                try:
+                    novels = json.load(file)
+                except json.JSONDecodeError:
+                    novels = []
+        else:
+            novels = []
+
+        # Append new data and write back to the file
+        novels.append(novel_data)
+        with open(json_file, "w") as file:
+            json.dump(novels, file, indent=4)
+
+        return "Novel uploaded successfully!"
+
     return render_template("novel_upload.html")
+
+
+@app.route('/listing.html')
+def novel_list():
+    json_file = "novels.json"
+
+    # Load data from JSON file
+    if os.path.exists(json_file):
+        with open(json_file, "r") as file:
+            try:
+                novels = json.load(file)
+            except json.JSONDecodeError:
+                novels = []
+    else:
+        novels = []
+
+    return render_template("listing.html", novels=novels)
 
 
 if __name__ == "__main__":
