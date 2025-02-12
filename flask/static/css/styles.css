@@ -9,7 +9,7 @@ p {
 /* Class Styles (Strength: 10) */
 
 h1>img {
-    width: 7% !important;
+    width: 9% !important;
     height: auto !important;
     margin: 0px !important;
 
@@ -116,7 +116,7 @@ aside>p {
 }
 
 .rounded-input {
-    width: 70%;
+    width: 100%;
     padding: 10px 20px;
     border: 1px solid #ccc;
     border-radius: 20px;
@@ -160,7 +160,8 @@ marquee {
 }
 
 fieldset img {
-    float: right;
+    width: 50%;
+    height: auto;
 }
 
 .navigationbar {
@@ -310,10 +311,7 @@ td img {
         display: block;
     }
 
-    .navigationbar div img {
-        width: 0.25%;
-        height: auto;
-    }
+
 
 
 
@@ -322,7 +320,7 @@ td img {
     }
 
     #header {
-        height: 20vh;
+        height: 30vh;
     }
 
     #actions {
@@ -374,7 +372,7 @@ td img {
     }
 
     .navigationbar>div {
-        padding: 12px 108px;
+        padding: 12px 114px;
         background: blue;
         font: 0.85em sans-serif;
 
@@ -384,6 +382,19 @@ td img {
 
         flex-direction: column-reverse;
 
+    }
+
+    h1>img {
+        width: 30% !important;
+        float: right;
+    }
+
+    .rounded-input {
+        width: 50%;
+    }
+
+    p label {
+        display: block;
     }
 
     h1,
