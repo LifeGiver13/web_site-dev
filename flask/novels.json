@@ -4,6 +4,27 @@
         "Novel Type": "Shonen",
         "Theme": "Adventure, freind_ship, and Action",
         "Author": "Eiichiro Oda",
-        "Book Cover": "uploaded_cover_page\\gojo-satoru-with-purple-lightning-effects-jujutsu-kaisen.jpg.webp"
+        "Book Cover": "/static/uploaded_cover_page/images.jpg"
+    },
+    {
+        "Novel Name": "Attak On Titans",
+        "Novel Type": "Shonen",
+        "Theme": "Adventuring, war, Dark fantasy",
+        "Author": "Edilai",
+        "Book Cover": "/static/uploaded_cover_page/titan-rage.jpg.webp"
+    },
+    {
+        "Novel Name": "The Moon Of Dominion",
+        "Novel Type": "Shonen",
+        "Theme": "Adventuring, war, Dark fantasy",
+        "Author": "Life Giver",
+        "Book Cover": "/static/uploaded_cover_page/TMOD.jpg"
+    },
+    {
+        "Novel Name": "The War Of The Empires",
+        "Novel Type": "Shonen",
+        "Theme": "Adventuring, war, Dark fantasy",
+        "Author": "Life Giver",
+        "Book Cover": "static/uploaded_cover_page\\sol.jpg"
     }
 ]
