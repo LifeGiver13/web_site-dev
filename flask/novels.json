@@ -25,6 +25,34 @@
         "Novel Type": "Shonen",
         "Theme": "Adventuring, war, Dark fantasy",
         "Author": "Life Giver",
-        "Book Cover": "static/uploaded_cover_page\\sol.jpg"
+        "Book Cover": "/static/uploaded_cover_page/sol.jpg"
+    },
+    {
+        "Novel Name": "Onepiece",
+        "Novel Type": "Shonen",
+        "Theme": "Adventure, freind_ship, and Action",
+        "Author": "Eiichiro Oda",
+        "Book Cover": "/static/uploaded_cover_page/TMOD.jpg"
+    },
+    {
+        "Novel Name": "Onepiece",
+        "Novel Type": "Shonen",
+        "Theme": "Adventure, thriller",
+        "Author": "Deziro",
+        "Book Cover": "/static/uploaded_cover_page/aki-hayakawa-with-sword.3840x2160.jpg.webp"
+    },
+    {
+        "Novel Name": "Onepiece",
+        "Novel Type": "Shonen",
+        "Theme": "Adventure, thriller",
+        "Author": "Deziro",
+        "Book Cover": "/static/uploaded_cover_page/gojo-six-eyes-jujutsu-kaisen.jpg.webp"
+    },
+    {
+        "Novel Name": "Onepiece",
+        "Novel Type": "Shonen",
+        "Theme": "Adventure, thriller",
+        "Author": "Deziro",
+        "Book Cover": "static/uploaded_cover_page\\gojo-six-eyes-jujutsu-kaisen.jpg.webp"
     }
 ]
