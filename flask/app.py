@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, session
 import os
 import json
 import mysql.connector
 
 app = Flask(__name__)
-
+app.secret_key = "watcher1345Ligivers*&%$"
 
 # @app.route("/")
 # # Attach a decoration that handles the route
@@ -13,33 +13,69 @@ app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "static/uploaded_cover_page"
 
 
-@app.route("/intro", methods=["GET", "POST"])
-@app.route("/intro/<username>")
-def intro(username=None):
-    print(request.args)
-    username = request.args.get("username", "User")
-    emailA = request.form.get("emailA")
-    password = request.args.get("password", "1234")
+conn = mysql.connector.connect(
+
+    host="localhost",
+    user="life_giver",
+    password="lifegiver13",
+    database="amc_se"
+
+)
+
+cursor = conn.cursor(dictionary=True)
+
+
+@app.route("/", methods=["GET", "POST"])
+def intro():
+    logged_in = session.get("logged_in", False)
+    username = session.get("username", "Guest")
 
     if request.method == "POST":
-        username = request.form.get("userName")
-        emailA = request.form.get("emailA")
-        password = request.form.get("password")
-        print(username, emailA, password)
+        entered_username = request.form.get("username")
+        entered_password = request.form.get("password")
 
-        with open("user_info.txt", "w") as file:
-            info = (f"User Name: {username}\n")
-            info += (f"EmailAdress: {emailA}\n")
-            info += (f"Password: {password}\n")
-            file.write(info)
-        file.close()
-   # Check if credentials are correct
+        # Parameterized query to fetch user matching entered username and password
+        select_query = "SELECT * FROM users WHERE username = %s AND password = %s"
+        cursor.execute(select_query, (entered_username, entered_password))
+        print(entered_username, entered_password)
+        user = cursor.fetchone()
 
-    if username:
-        return f"Welcome to Anime Novels {username}"
+        if user:
+            session["username"] = user["username"]
+            session["logged_in"] = True
+            return f"Welcome to Anime Novels, {user['username']}!"
+        else:
+            return "Invalid information, please try again."
 
-    else:
-        return "Hello, User"
+    return render_template("/", username=username, logged_in=logged_in)
+
+
+# @app.route("/", methods=["GET", "POST"])
+# def intro(username=None):
+#     logged_in = session.get("logged_in") if session.get("logged_in") else False
+#     username = session["username"] if session.get("logged_in") else "Guest"
+
+#     if request.method == "POST":
+
+#         username = request.args.get("username", "User")
+#         emailA = request.form.get("emailA")
+#         password = request.form.get("password")
+
+#         select_querry = " SELECT username, password, email_address FROM users WHERE username = %s"
+#         cursor.execute(select_querry, (username,))
+#         user = cursor.fetchone()
+#         if user:
+#             # Check if entered credentials match database records
+#             if password == user["password"] and emailA == user["email_address"]:
+#                 session["username"] = user["username"]
+#                 session["logged_in"] = True
+#                 return f"Welcome to Anime Novels, {user['username']}!"
+#             else:
+#                 return "Invalid credentials, please try again."
+#         else:
+#             return "User not found. Please register."
+
+#     return render_template('/', username=username, logged_in=logged_in)
 
 
 @app.route('/listing_page.html')
@@ -55,16 +91,6 @@ def style():
 @app.route('/TBE.html')
 def TBE():
     return render_template("TBE.html", page_title="The Bone Exorsist")
-
-conn = mysql.connector.connect(
-
-        host="localhost",
-        user="life_giver",
-        password="lifegiver13",
-        database="amc_se"
-
-    )
-cursor = conn.cursor()
 
 
 @app.route("/novel_upload2", methods=["POST", "GET"])
@@ -103,8 +129,10 @@ def uploading_info2():
 def novel_list2():
     cursor.execute(
         "SELECT novel_name, novel_type, theme, author, cover_page FROM novel_list")
+
     novels = cursor.fetchall()
-    return render_template("novel_list.html", novels=novels)
+    conn.commit()
+    return render_template("listing.html", novels=novels)
 
 
 @app.route("/novel_upload", methods=["POST", "GET"])

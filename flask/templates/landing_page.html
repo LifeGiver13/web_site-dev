@@ -185,10 +185,10 @@
                             <h2>Login
                             </h2>
                         </legend>
-                        <form method="post" action="/intro">
-
-                            <p><label name="userName">User Name:</label>
-                                <input class="rounded-input" , name="userName" ,type="text" ,
+                        <form method="post" action="/" enctype="multipart/form-data">
+                            {% if not logged_in %}
+                            <p><label name="username">User Name:</label>
+                                <input class="rounded-input" , name="username" ,type="text" ,
                                     placeholder="Enter your first name" required>
                             </p>
 
@@ -205,7 +205,11 @@
                             </p>
                             <p id="cent"><input class="rounded-button" , name="enter" , type="submit" , value="Login">
                             </p>
-
+                            {%else%}
+                            <p>Welcome {{username}}
+                                <input type="submit" value="Logout">
+                            </p>
+                            {% endif %}
                     </fieldset>
                     </form>
                 </div>
