@@ -4,7 +4,7 @@ import json
 import mysql.connector
 
 app = Flask(__name__)
-app.secret_key = "watcher1345Ligivers*&%$"
+app.secret_key = "kenko182kaneju7364&*(jacee)[2]&238#"
 
 # @app.route("/")
 # # Attach a decoration that handles the route
@@ -57,13 +57,15 @@ def intro():
 
 #     if request.method == "POST":
 
-#         username = request.args.get("username", "User")
+#         username = request.form.get("username")
 #         emailA = request.form.get("emailA")
 #         password = request.form.get("password")
 
 #         select_querry = " SELECT username, password, email_address FROM users WHERE username = %s"
 #         cursor.execute(select_querry, (username,))
 #         user = cursor.fetchone()
+#         print(username, emailA, password)
+
 #         if user:
 #             # Check if entered credentials match database records
 #             if password == user["password"] and emailA == user["email_address"]:
@@ -93,37 +95,100 @@ def TBE():
     return render_template("TBE.html", page_title="The Bone Exorsist")
 
 
+# @app.route("/novel_upload2", methods=["POST", "GET"])
+# def uploading_info2():
+#     if request.method == "POST":
+#         novel_name = request.form.get("novelName")
+#         novel_type = request.form.get("novelType")
+#         theme = request.form.get("theme")
+#         author = request.form.get("author")
+#         book_cover = request.files["book_cover"]
+
+#         # Save the uploaded book cover
+#         cover_path = None
+#         if book_cover:
+#             cover_path = os.path.join(
+#                 app.config["UPLOAD_FOLDER"], book_cover.filename)
+#             book_cover.save(cover_path)
+
+#         # Insert data into MySQL
+#         insert_query = """
+#             INSERT INTO novel_list (novel_name, novel_type, theme, author, cover_page)
+#             VALUES (%s, %s, %s, %s, %s)
+#         """
+#         values = (novel_name, novel_type, theme, author, cover_path)
+
+#         cursor.execute(insert_query, values)
+#         conn.commit()
+
+#         print(f"{cursor.rowcount} record inserted.")
+#         return "Novel uploaded successfully!"
+
+#     return render_template("novel_upload.html")
 @app.route("/novel_upload2", methods=["POST", "GET"])
 def uploading_info2():
     if request.method == "POST":
-        novel_name = request.form.get("novelName")
-        novel_type = request.form.get("novelType")
-        theme = request.form.get("theme")
-        author = request.form.get("author")
-        book_cover = request.files["book_cover"]
+        # Check if it's an update or delete request
+        action = request.form.get("action")
+        novel_id = request.form.get("novelID")  # Ensure novel ID is provided
 
-        # Save the uploaded book cover
-        cover_path = None
-        if book_cover:
-            cover_path = os.path.join(
-                app.config["UPLOAD_FOLDER"], book_cover.filename)
-            book_cover.save(cover_path)
+        if not novel_id:
+            return "Novel ID is required!", 400  # Return error if no ID is provided
 
-        # Insert data into MySQL
-        insert_query = """
-            INSERT INTO novel_list (novel_name, novel_type, theme, author, cover_page)
-            VALUES (%s, %s, %s, %s, %s)
-        """
-        values = (novel_name, novel_type, theme, author, cover_path)
+        if action == "delete":
+            # DELETE query
+            delete_query = "DELETE FROM novel_list WHERE id = %s"
+            cursor.execute(delete_query, (novel_id,))
+            conn.commit()
 
-        cursor.execute(insert_query, values)
-        conn.commit()
+            return f"{cursor.rowcount} record deleted successfully!"
 
-        print(f"{cursor.rowcount} record inserted.")
-        return "Novel uploaded successfully!"
+        else:
+            # Handle Update as before
+            novel_name = request.form.get("novelName")
+            novel_type = request.form.get("novelType")
+            theme = request.form.get("theme")
+            author = request.form.get("author")
+            book_cover = request.files.get("book_cover")
+
+            cover_path = None
+            if book_cover and book_cover.filename:
+                cover_path = os.path.join(
+                    app.config["UPLOAD_FOLDER"], book_cover.filename)
+                book_cover.save(cover_path)
+
+            update_query = "UPDATE novel_list SET "
+            update_values = []
+            updates = []
+
+            if novel_name:
+                updates.append("novel_name = %s")
+                update_values.append(novel_name)
+            if novel_type:
+                updates.append("novel_type = %s")
+                update_values.append(novel_type)
+            if theme:
+                updates.append("theme = %s")
+                update_values.append(theme)
+            if author:
+                updates.append("author = %s")
+                update_values.append(author)
+            if cover_path:
+                updates.append("cover_page = %s")
+                update_values.append(cover_path)
+
+            if not updates:
+                return "No fields to update!"
+
+            update_query += ", ".join(updates) + " WHERE id = %s"
+            update_values.append(novel_id)
+
+            cursor.execute(update_query, tuple(update_values))
+            conn.commit()
+
+            return f"{cursor.rowcount} record updated successfully!"
 
     return render_template("novel_upload.html")
-
 
 @app.route("/novel_list2")
 def novel_list2():
